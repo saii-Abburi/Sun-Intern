@@ -16,3 +16,14 @@ function autoScroll() {
 }
 
 setInterval(autoScroll, 3000);
+
+
+function toggleMenu(){
+    let menuList = document.getElementById("menuList");
+    if(menuList.style.display =="none"){
+        menuList.style.display ="flex";
+    }
+    else{
+        menuList.style.display ="none";
+    }
+}

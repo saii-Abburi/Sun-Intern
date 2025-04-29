@@ -75,6 +75,7 @@ header{
     padding: 25px 12px;
     align-items: center;
     font-family: var(--head-font);
+    background: beige;
 }
 .header-left h1{
     font-size: var(--heading);
@@ -98,12 +99,16 @@ header{
     width: 0%;
     height: 2.5px;
     bottom: 0;
-    background: #FFA500;
+    left: 0;
+    background: orangered;
     transition: all .8s;
 }
 
 .header-right ul li:hover::before{
     width: 100%;
+}
+.menu-icon{
+    display: none;
 }
 .container{
     padding: 1rem 2rem;
@@ -149,4 +154,46 @@ header{
 }
 .slider-nav a:hover{
     opacity: 1;
+}
+@media (max-width:480px) {
+    .socials{
+        display: none;
+    }
+    .mail{
+        width:100vw;
+        font-size: xx-small;
+    }
+    .mail-right button , .mail-left h2 , .mail-right p{
+        font-size: xx-small;
+    }
+    .slider img{
+        height: 300px;
+        width: 260px;
+        object-position: center;
+        object-fit: fill;
+    }
+}
+@media (max-width:768px) {
+    .header-right ul{
+        position: absolute;
+        top: 146px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: beige;
+        z-index: 3;
+        gap: 0;
+        display: none;
+        overflow: hidden;
+    }
+    .header-right ul li{
+        padding: 10px;
+        width: max-content;
+        margin: 0 auto;
+    }
+    .menu-icon{
+        display: block;
+        font-size: 32px;
+    }
 }
