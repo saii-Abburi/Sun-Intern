@@ -1,21 +1,40 @@
 const slider = document.querySelector('.slider');
-let scrollAmount = 0;
+const navLinks = document.querySelectorAll('.slider-nav a');
+const slides = document.querySelectorAll('.slider img');
 
-function autoScroll() {
-    const slideWidth = slider.clientWidth;
-    scrollAmount += slideWidth;
+let currentIndex = 0;
 
-    if (scrollAmount >= slider.scrollWidth) {
-        scrollAmount = 0;
-    }
-
-    slider.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth"
+function updateActiveLink(index) {
+    navLinks.forEach((link, i) => {
+        link.classList.toggle('active', i === index);
     });
 }
 
+function autoScroll() {
+    const slideWidth = slider.clientWidth;
+    currentIndex++;
+
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
+    }
+
+    slider.scrollTo({
+        left: slideWidth * currentIndex,
+        behavior: "smooth"
+    });
+
+    updateActiveLink(currentIndex);
+}
+
 setInterval(autoScroll, 3000);
+
+navLinks.forEach((link, index) => {
+    link.addEventListener('click', () => {
+        currentIndex = index;
+        updateActiveLink(index);
+    });
+});
+
 
 
 function toggleMenu(){
@@ -27,3 +46,6 @@ function toggleMenu(){
         menuList.style.display ="none";
     }
 }
+
+const links = document.getElementsByClassName('slider-nav')[0].children;
+console.log(links)
