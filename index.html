@@ -1,81 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sun Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="mail">
-       
-        <div class="mail-left">
-            <h2><i class="fa-solid fa-envelope"></i>: @Sun.org.in</h2>
-        </div>
-        <div class="mail-right">
-            <p>For A Better Change</p>
-            <button>❤️Support Us</button>
-        </div>
+      <div class="mail-left">
+        <h2><i class="fa-solid fa-envelope"></i>: @Sun.org.in</h2>
+      </div>
+      <div class="mail-right">
+        <p>For A Better Change</p>
+        <button>❤️Support Us</button>
+      </div>
     </div>
     <header>
-        <div class="header-left">
-            <h1>SUN</h1>
-            <p>Students union for nation</p>
-        </div>
-        <div class="header-right">
-            <ul id="menuList">
-                <li>About Us</li>
-                <li>Vision</li>
-                <li>Mission</li>
-                <li>Previous Programs</li>
-                <li>Work With Us</li>
-                <li>Login/ SignUp
-                </li>
-            </ul>
-        </div>
-        <div class="menu-icon">
-            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-        </div>
+      <div class="header-left">
+        <h1>SUN</h1>
+        <p>Students union for nation</p>
+      </div>
+      <div class="header-right">
+        <ul id="menuList">
+          <a href="#about"><li>About Us</li></a>
+          <li>Vision</li>
+          <li>Mission</li>
+          <li>Previous Programs</li>
+          <li>Work With Us</li>
+          <button>Login/Sign Up</button>
+        </ul>
+      </div>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </div>
     </header>
     <div class="socials">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-x-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
     </div>
     <section class="container">
-        <div class="slider-wrapper">
-            <div class="hero-title">
-                <h1>
-                    <span>Skip</span> a Coffee. <br> <span>Sponsor</span> a Classroom.
-                </h1>
-                <h3>Because Every Child Deserves a Chance</h3>
-                <div class="hero-btns">
-                    <button >Give Them A chance</button>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <div class="slider">
-                <img src="./slider1.jpg" alt="" id="slide-1">
-                <img id="slide-2" src="./slider2.jpg" alt="">
-                <img src="./slider3.jpg" alt="" id="slide-3">        
-                <img src="./slider4.jpg" alt="" id="slide-4">  
-                <img src="./slider5.jpg" alt="" id="slide-5">    
-            </div>
-            <div class="slider-nav">
-                <a href="#slide-1">01</a>
-                <a href="#slide-2">02</a>
-                <a href="#slide-3">03</a>
-                <a href="#slide-4">04</a>
-                <a href="#slide-5">05</a>
-
-            </div>
-            
+      <div class="slider-wrapper">
+        <div class="hero-title">
+          <h1>
+            <span>Skip</span> a Coffee <br />
+            <span>Sponsor</span> a Classroom
+          </h1>
+          <h3>Because Every Child Deserves a Chance</h3>
+          <div class="hero-btns">
+            <button>Give Them A chance</button>
+            <button>Read More</button>
+          </div>
         </div>
+        <div class="slider">
+          <img src="./slider1.jpg" alt="" id="slide-1" />
+          <img id="slide-2" src="./slider2.jpg" alt="" />
+          <img src="./slider3.jpg" alt="" id="slide-3" />
+          <img src="./slider4.jpg" alt="" id="slide-4" />
+          <img src="./slider5.jpg" alt="" id="slide-5" />
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+          <a href="#slide-4"></a>
+          <a href="#slide-5"></a>
+        </div>
+      </div>
     </section>
-    
+    <section class="about-us" id="about">
+      <div class="abt-left">
+        <h4 style="font-weight: normal; font-size: 18px; margin-bottom: 12px">
+          About Us
+        </h4>
+        <h2>
+          Together for Truth <br />
+          Together for a Better <span>Tomorrow</span>
+        </h2>
+        <div class="about-tags">
+          <button class="active" data-tab="0">Our Vision</button>
+          <button data-tab="1">Our Purpose</button>
+          <button data-tab="2">Values</button>
+          <button data-tab="3">Impact Story</button>
+        </div>
+
+        <div class="abt-tag-info-wrapper">
+          <div class="abt-tag-info active">
+            <p>
+              We believe that lasting change starts with compassion and
+              commitment. Every action we take is guided by the vision to uplift
+              lives, empower communities, and create a future filled with hope,
+              dignity, and opportunity for all.
+            </p>
+            <button>Read More</button>
+          </div>
+          <div class="abt-tag-info">
+            <p>
+              Our purpose is to bridge gaps between privilege and need. We
+              strive to create opportunities where there were none—whether
+              through education, healthcare, or community support—so that every
+              person has the chance to thrive, regardless of their background.
+            </p>
+            <button>Read More</button>
+          </div>
+          <div class="abt-tag-info">
+            <p>
+              Integrity, compassion, and transparency are at the heart of all we
+              do. We believe in acting with honesty, respecting the dignity of
+              every life, and being accountable to the communities and donors
+              who trust in our mission.
+            </p>
+            <button>Read More</button>
+          </div>
+          <div class="abt-tag-info">
+            <p>
+              From building classrooms in underserved villages to delivering
+              essentials during crises, our impact is real and growing. Every
+              donation fuels stories of hope—of children returning to school,
+              women starting businesses, and families reclaiming their future
+              with dignity.
+            </p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="abt-stats">
+          <div class="stat">
+            <h2>121</h2>
+            <p>Members</p>
+          </div>
+          <hr>
+          <div class="stat">
+            <h2>100K+</h2>
+            <p>Fund Raised</p>
+          </div>
+          <hr>
+          <div class="stat">
+            <h2>2K+</h2>
+            <p>Childrens helped</p>
+          </div>
+          <hr>
+          <div class="stat">
+            <h2>500+</h2>
+            <p>Volunteers</p>
+          </div>
+        </div>
+      </div>
+      <div class="abt-right">
+        <img src="https://www.cry.org/wp-content/themes/cry/images/video-patch.png" alt="">
+        <video src="./SunChildren.mp4" muted autoplay loop></video>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="testi-left">
+        <h4 style="font-weight: normal; font-size: 18px; margin-bottom: 12px">Impact</h4>
+        <h2>
+          Why We Serve<br />
+          Why It <span>Matters</span>
+        </h2>
+        <p>
+          Behind every donation and every act of service lies a powerful story
+          of compassion and belief in change. These heartfelt voices from our
+          donors and volunteers are not just words—they are proof that kindness
+          can move mountains and transform lives.
+        </p>
+        <div class="hero-btns">
+          <button>
+            <i class="fa-solid fa-hand-holding-dollar"></i> Donate for happiest childhood
+          </button>
+        </div>
+      </div>
+      <div class="testi-right">
+        <ul>
+          <li>
+            <div class="card-img">
+              <img src="./slider1.jpg" alt="" />
+            </div>
+            <div class="card-info">
+              <p>
+                "Supporting this NGO has been life-changing. Knowing my donation
+                helps real families makes every rupee worthwhile."
+              </p>
+              <h2>Rajesh</h2>
+              <h3>Regulas Donor</h3>
+            </div>
+          </li>
+          <li class="reverse">
+            <div class="card-img">
+              <img src="./slider1.jpg" alt="" />
+            </div>
+            <div class="card-info">
+              <p>
+                "Supporting this NGO has been life-changing. Knowing my donation
+                helps real families makes every rupee worthwhile."
+              </p>
+              <h2>Rajesh</h2>
+              <h3>Regulas Donor</h3>
+            </div>
+          </li>
+          <li>
+            <div class="card-img">
+              <img src="./slider1.jpg" alt="" />
+            </div>
+            <div class="card-info">
+              <p>
+                "Supporting this NGO has been life-changing. Knowing my donation
+                helps real families makes every rupee worthwhile."
+              </p>
+              <h2>Rajesh</h2>
+              <h3>Regulas Donor</h3>
+            </div>
+          </li>
+          <li class="reverse">
+            <div class="card-img">
+              <img src="./slider1.jpg" alt="" />
+            </div>
+            <div class="card-info">
+              <p>
+                "Supporting this NGO has been life-changing. Knowing my donation
+                helps real families makes every rupee worthwhile."
+              </p>
+              <h2>Rajesh</h2>
+              <h3>Regulas Donor</h3>
+            </div>
+          </li>
+          <li>
+            <div class="card-img">
+              <img src="./slider1.jpg" alt="" />
+            </div>
+            <div class="card-info">
+              <p>
+                "Supporting this NGO has been life-changing. Knowing my donation
+                helps real families makes every rupee worthwhile."
+              </p>
+              <h2>Rajesh</h2>
+              <h3>Regulas Donor</h3>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <script src="./app.js"></script>
-    <script src="https://kit.fontawesome.com/e50a70e381.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/e50a70e381.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
