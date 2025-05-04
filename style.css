@@ -294,7 +294,7 @@ header {
 
 .about-us h2,
 .testi-left h2,
-.hero-title h1 , .abt-right h2 , .center , .e .e-date h2  {
+.hero-title h1 , .abt-right h2 , .center , .e .e-date h2  , .f-card h1  {
   font-weight: 550;
   margin-top: 3px;
   font-size: var(--heading);
@@ -302,11 +302,11 @@ header {
   line-height: 40px;
 }
 .about-us h2 span,
-.testi-left h2 span {
+.testi-left h2 span , .f-card span  {
   font-family: cursive;
 }
 .about-us h2 span::before,
-.testi-left h2 span::before , .f-card e::before {
+.testi-left h2 span::before , .f-card span::before {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -439,11 +439,13 @@ input:focus {
   outline: none;
 }
 
+input:not(:placeholder-shown) + label,
 input:focus + label {
   transform: translateY(-32px);
   color: #ff5700;
   background-color: #fff;
 }
+
 
 /* ********* Up coming Events ********** */
 .upcomingevents{
@@ -716,7 +718,7 @@ footer h2{
   color: orange;
   margin-bottom: 12px;
 }
-footer span{
+.f-1 span{
   color: white;
   display: flex;
   gap: 8px;
@@ -880,6 +882,28 @@ footer div ul li{
   .hero-title {
     display: none;
   }
+  .events-left , .events-right{
+    width: 100%;
+  }
+  .about-us h2, .testi-left h2, .hero-title h1, .abt-right h2, .center, .e .e-date h2, .f-card h1{
+    font-size: 32px;
+  }
+  .f-card{
+    top: -30%;
+  }
+  .f-copyright{
+    display: block;
+  }
+  .f-copyright h2{
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .about-tags{
+    flex-wrap: wrap;
+  }
+  .testi-right ul li .card-img img{
+    height: 200px;
+  }
 }
 
 @media (max-width: 940px) {
@@ -912,6 +936,49 @@ footer div ul li{
     display: block;
     font-size: 32px;
   }
+  .about-us , .testimonials, .upcomingevents{
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+  }
+  .abt-left , .abt-right{
+    width: 100%;
+  }
+  .upcomingevents{
+    height: 120vh;
+    justify-content: start;
+  }
+  .events-right{
+    width: fit-content;
+  }
+  .events-left img{
+    width: 100%;
+  }
+  .f-card{
+    width: 100%;
+    left: 0;
+    height: fit-content;
+    padding: 38px 50px;
+  }
+  footer .f-all{
+    padding-top: 7rem;
+    flex-direction: column;
+  }
+  .floating-top{
+    right: 8%;
+    z-index: 3;
+  }
+  .abt-stats{
+   flex-wrap: wrap; 
+  }
+  .testi-right ul li{
+    width: 100%;
+    height: fit-content;
+  }
+  .testimonials{
+    height: 80vh;
+  }
+
 }
 
 @keyframes scrollUp {
