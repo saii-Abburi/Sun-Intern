@@ -6,6 +6,7 @@
     <title>Sun Page</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="mail">
       <div class="mail-left">
@@ -13,7 +14,7 @@
       </div>
       <div class="mail-right">
         <p>For A Better Change</p>
-        <button>❤️Support Us</button>
+        <button><a href="./Donation.html">❤️Support Us</a></button>
       </div>
     </div>
     <header>
@@ -23,10 +24,12 @@
       </div>
       <div class="header-right">
         <ul id="menuList">
-          <a href="#about"><li>About Us</li></a>
-          <li>Vision</li>
-          <li>Mission</li>
-          <li>Previous Programs</li>
+          <a href="#about">
+            <li>About Us</li>
+          </a>
+          <a href="#about"><li>Vision</li></a>
+          <a href="#about"><li>Mission</li></a>
+          <a href="#upcomingevents"><li>Programs</li></a>
           <li>Work With Us</li>
           <button>Login/Sign Up</button>
         </ul>
@@ -50,7 +53,7 @@
           </h1>
           <h3>Because Every Child Deserves a Chance</h3>
           <div class="hero-btns">
-            <button>Give Them A chance</button>
+            <a href="./Donation.html"><button>Give Them A chance</button></a>
             <button>Read More</button>
           </div>
         </div>
@@ -154,14 +157,26 @@
           lasting change.
         </p>
 
-        <form class="volunteer-form">
+        <form class="volunteer-form" id="volunteer-form">
           <div class="form-group">
-            <input type="text" id="fullname" name="fullname" placeholder="" required />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder=""
+              required
+            />
             <label for="fullname">Full Name</label>
           </div>
 
           <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=""
+              required
+            />
             <label for="email">Email Address</label>
           </div>
 
@@ -176,6 +191,61 @@
           </div>
           <button type="submit">Register</button>
         </form>
+      </div>
+    </section>
+
+    <section class="teams" id="teams">
+      <h2 style="text-align: center">Our Teams</h2>
+
+      <div class="teams-container">
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>Tech saala</h3>
+          <p>Explains about technical and science experiments to the students and creating content</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>The Imaginators</h3>
+          <p>Art and extra cultural activites</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>Guiding Lights</h3>
+          <p>carrier Guidance</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>Visual Vibe</h3>
+          <p>taking Photos of every event, Handling social media and poster making</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>Feeding Hands</h3>
+          <p>Food Distribution at orphanages and old age homes</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>The Life Saviours</h3>
+          <p>Blood donations and circulating about requirements of blood</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>Event Management</h3>
+          <p>Organising SUN prgorams and planning events</p>
+          <button>Know more</button>
+        </div>
+        <div class="team">
+          <img src="./slider1.jpg" alt="">
+          <h3>Elite Queens</h3>
+          <p>Giving awareness to the girls among society</p>
+          <button>Know more</button>
+        </div>
       </div>
     </section>
     <section class="testimonials">
@@ -194,92 +264,99 @@
           can move mountains and transform lives.
         </p>
         <div class="hero-btns">
-          <button>
+          <a href="./Donation.html">          <button>
             <i class="fa-solid fa-hand-holding-dollar"></i> Donate for happiest
             childhood
-          </button>
+          </button></a>
         </div>
       </div>
       <div class="testi-right">
-        <ul>
-          <li>
-            <div class="card-img">
-              <img src="./slider1.jpg" alt="" />
-            </div>
-            <div class="card-info">
-              <p>
-                "Supporting this NGO has been life-changing. Knowing my donation
-                helps real families makes every rupee worthwhile."
-              </p>
-              <h2>Rajesh</h2>
-              <h3>Regulas Donor</h3>
-            </div>
-          </li>
-          <li class="reverse">
-            <div class="card-img">
-              <img src="./slider1.jpg" alt="" />
-            </div>
-            <div class="card-info">
-              <p>
-                "Supporting this NGO has been life-changing. Knowing my donation
-                helps real families makes every rupee worthwhile."
-              </p>
-              <h2>Rajesh</h2>
-              <h3>Regulas Donor</h3>
-            </div>
-          </li>
-          <li>
-            <div class="card-img">
-              <img src="./slider1.jpg" alt="" />
-            </div>
-            <div class="card-info">
-              <p>
-                "Supporting this NGO has been life-changing. Knowing my donation
-                helps real families makes every rupee worthwhile."
-              </p>
-              <h2>Rajesh</h2>
-              <h3>Regulas Donor</h3>
-            </div>
-          </li>
-          <li class="reverse">
-            <div class="card-img">
-              <img src="./slider1.jpg" alt="" />
-            </div>
-            <div class="card-info">
-              <p>
-                "Supporting this NGO has been life-changing. Knowing my donation
-                helps real families makes every rupee worthwhile."
-              </p>
-              <h2>Rajesh</h2>
-              <h3>Regulas Donor</h3>
-            </div>
-          </li>
-          <li>
-            <div class="card-img">
-              <img src="./slider1.jpg" alt="" />
-            </div>
-            <div class="card-info">
-              <p>
-                "Supporting this NGO has been life-changing. Knowing my donation
-                helps real families makes every rupee worthwhile."
-              </p>
-              <h2>Rajesh</h2>
-              <h3>Regulas Donor</h3>
-            </div>
-          </li>
-        </ul>
+        <video src="./SunChildren.mp4" autoplay muted></video>
       </div>
     </section>
 
-    <h2 style="text-align: center; margin-bottom: 24px;" class="center">Upcoming Events</h2>
-    <section class="upcomingevents">
+    <section class="feedback">
+      <div class="feed-top">
+        <p>words of Goodness</p>
+        <p>Messages of Love & Support</p>
+      </div>
+      <hr />
+      <form class="feeds-container">
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="0" />
+          <p>
+            m//002 <br />
+            Suma Devi.
+          </p>
+        </div>
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="1" />
+          <p>
+            m//003 <br />
+            Arjun Mehta.
+          </p>
+        </div>
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="2" checked />
+          <p>
+            m//004 <br />
+            Kavitha Reddy.
+          </p>
+        </div>
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="3" />
+          <p>
+            m//005 <br />
+            Ramesh Nair.
+          </p>
+        </div>
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="4" />
+          <p>
+            m//006 <br />
+            Lakshmi.
+          </p>
+        </div>
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="5" />
+          <p>
+            m//008 <br />
+            Chris.
+          </p>
+        </div>
+        <div class="feed-head">
+          <input type="radio" name="testimonial" value="6" />
+          <p>
+            m//007 <br />
+            Bruce.
+          </p>
+        </div>
+      </form>
+      <div class="testimonial-message" id="testimonialBox">
+        <h1>
+          I’ve been supporting this NGO for over 3 years now. Their transparency
+          and on-ground results make every rupee count.
+        </h1>
+      </div>
+      <div class="feed-bottom">
+        <button>send Message</button>
+        <p>
+          Sometimes it’s the smallest actions that can make the biggest impact.
+        </p>
+      </div>
+    </section>
+
+    <h2 style="text-align: center; margin-bottom: 24px" class="center">
+      Upcoming Events
+    </h2>
+    <section class="upcomingevents" id="upcomingevents">
       <div class="events-left">
         <div class="e-date">
           <h2>26</h2>
           <p>Jan</p>
           <p>2025</p>
         </div>
-        <img src="./upcoming.png" alt="">
+        <img src="./upcoming.png" alt="" />
         <div class="e-info">
           <h3>Republic Day celebration</h3>
           <p><i class="fa-regular fa-clock"></i> 09:00 - 12:00 PM , Monday</p>
@@ -326,37 +403,40 @@
       </div>
     </section>
 
-
     <section class="floating-top">
       <a href="#">
         <ew>
-        <i class="fa-solid fa-angle-up">
-        
-      </i>
-      Back to Top
-      </ew>
+          <i class="fa-solid fa-angle-up"> </i>
+          Back to Top
+        </ew>
       </a>
-      <button>Help?</button>
+      <button><a href="./Donation.html">Help?</a></button>
     </section>
 
-    
     <footer>
       <section class="f-card">
         <h1>Your Help Can Make This <span>World Better</span></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repudiandae, nesciunt labore aperiam incidunt, reprd, quae animi doloremque natus? Laborum.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+          repudiandae, nesciunt labore aperiam incidunt, reprd, quae animi
+          doloremque natus? Laborum.
+        </p>
         <div class="fcard-btn">
-          <button>Donate Now</button>
-          <button>Join with us</button>
+          <button><a href="./Donation.html">Donate Now</a></button>
+          <button><a href="#volunteer-form">Join with us</a></button>
         </div>
       </section>
       <div class="f-all">
         <div class="f-1">
           <h1>SUN</h1>
           <p>Students union for nation</p>
-          <span><i class="fa-solid fa-location-dot"></i> Guntur , Andhra Pradesh</span>
+          <span
+            ><i class="fa-solid fa-location-dot"></i> Guntur , Andhra
+            Pradesh</span
+          >
           <span><i class="fa-solid fa-envelope"></i>: @Sun.org.in</span>
           <span><i class="fa-solid fa-phone"></i>+91 9876543210</span>
-          <hr>
+          <hr />
           <div class="f-socials">
             <i class="fa-brands fa-facebook-f"></i>
             <i class="fa-brands fa-x-twitter"></i>
@@ -367,11 +447,11 @@
         <div class="f-2">
           <h2>Quick Links</h2>
           <ul>
-            <li>Home</li>
-            <li>Events</li>
-            <li>About us</li>
-            <li>Mission</li>
-            <li>Teams</li>
+            <a href="#"><li>Home</li></a>
+            <a href="#upcomingevents"><li>Events</li></a>
+            <a href="#about"><li>About us</li></a>
+            <a href=""><li>Mission</li></a>
+            <a href="#teams"><li>Teams</li></a>
           </ul>
         </div>
         <div class="f-3">
@@ -386,20 +466,22 @@
         </div>
         <div class="f-4">
           <h2>News Letter</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neceanditiis temporam si</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Neceanditiis temporam si
+          </p>
           <form action="">
-            <input type="email" placeholder="Subscribe Via Email">
+            <input type="email" placeholder="Subscribe Via Email" />
             <button>Subscribe</button>
           </form>
         </div>
       </div>
-      
     </footer>
     <div class="f-copyright">
       <h2>Copyright © 2025 SUN NG0 | All Right Reserved</h2>
       <div class="copyrght-links">
         <a href="#">Terms and conditions</a>
-        <hr>
+        <hr />
         <a href="#">Privacy policy</a>
       </div>
     </div>

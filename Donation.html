@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      background: #2a2a40;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, select, textarea, button {
+      width: 95%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .donation-options button {
+      width: 23%;
+      margin-right: 2%;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .donation-options button.active {
+      background: #5a4fff;
+    }
+    .submit-btn {
+      background: #5a4fff;
+      color: white;
+      margin-top: 20px;
+    }
+    #successMessage {
+      display: none;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .checkmark {
+      font-size: 80px;
+      color: green;
+    }
+    .thank-you {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    #checkmark{
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    #checkmark input{
+      width: 40px;
+      height: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Donation Form -->
+    <div id="donationFormContainer">
+      <h2>Your Information</h2>
+      <form id="donationForm">
+        <input type="text" id="fullName" placeholder="Full Name *" required />
+        <input type="email" id="email" placeholder="Email Address *" required />
+        <input type="text" id="phone" placeholder="Phone Number (optional)" />
+
+        <h3>Donation Details</h3>
+        <div class="donation-options">
+          <button type="button" onclick="selectAmount(500)">₹500</button>
+          <button type="button" onclick="selectAmount(1000)">₹1,000</button>
+          <button type="button" onclick="selectAmount(2500)">₹2,500</button>
+          <button type="button" onclick="enableCustomAmount()">Custom</button>
+        </div>
+        <input type="number" id="customAmount" placeholder="Enter custom amount" style="display:none;" />
+
+        <select id="paymentMethod" required>
+          <option value="">Select a payment method</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="upi">UPI</option>
+          <option value="netbanking">Net Banking</option>
+        </select>
+
+        <label id="checkmark"><input type="checkbox" id="monthly" /> <p>Make this a monthly donation</p></label>
+
+        <h3>Additional Information</h3>
+        <textarea placeholder="Share why you’re donating..." rows="4"></textarea>
+
+        <button type="submit" class="submit-btn">Complete Donation</button>
+      </form>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage">
+      <div class="checkmark">✔</div>
+      <div class="thank-you">Thank You for Your Donation!</div>
+      <p>Your generosity makes our work possible. A confirmation email has been sent to your inbox.</p>
+      <button onclick="resetForm()" class="submit-btn">Make Another Donation</button>
+    </div>
+  </div>
+
+  <script>
+    let selectedAmount = null;
+
+    function selectAmount(amount) {
+      selectedAmount = amount;
+      document.getElementById('customAmount').style.display = 'none';
+      document.querySelectorAll('.donation-options button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function enableCustomAmount() {
+      selectedAmount = null;
+      document.getElementById('customAmount').style.display = 'block';
+      document.querySelectorAll('.donation-options button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    document.getElementById('donationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const payment = document.getElementById('paymentMethod').value;
+      const custom = document.getElementById('customAmount').value;
+
+      if (!name || !email || !payment || (!selectedAmount && !custom)) {
+        alert('Please fill all required fields.');
+        return;
+      }
+
+      document.getElementById('donationFormContainer').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+    });
+
+    function resetForm() {
+      document.getElementById('donationForm').reset();
+      document.querySelectorAll('.donation-options button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('customAmount').style.display = 'none';
+      selectedAmount = null;
+      document.getElementById('successMessage').style.display = 'none';
+      document.getElementById('donationFormContainer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
