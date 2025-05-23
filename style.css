@@ -1104,7 +1104,7 @@ footer div ul li {
     width: 100%;
   }
   .upcomingevents {
-    height: 100vh;
+    min-height: 100vh;
     margin-bottom: 48px;
     justify-content: start;
   }
