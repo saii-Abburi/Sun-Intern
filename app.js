@@ -1,7 +1,7 @@
 const slider = document.querySelector(".slider");
 const navLinks = document.querySelectorAll(".slider-nav a");
 const slides = document.querySelectorAll(".slider img");
-const buttons = document.querySelectorAll(".about-tags button");
+const tabButtons = document.querySelectorAll(".tab-btn");
 let currentIndex = 0;
 
 function updateActiveLink(index) {
@@ -44,29 +44,29 @@ function toggleMenu() {
   }
 }
 
-function aboutUs() {
-  buttons.forEach((button) => {
+// Premium Tab Functionality
+function initTabs() {
+  const tabContents = document.querySelectorAll(".tab-content");
+  
+  tabButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      buttons.forEach((btn) => btn.classList.remove("active"));
+      // Remove active class from all buttons and contents
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      tabContents.forEach(content => content.classList.remove("active"));
+      
+      // Add active class to clicked button and corresponding content
       button.classList.add("active");
+      tabContents[index].classList.add("active");
     });
   });
 }
-aboutUs();
 
-const infos = document.querySelectorAll(".abt-tag-info");
-
-buttons.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    // Toggle active button
-    buttons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    // Toggle info section
-    infos.forEach((info) => info.classList.remove("active"));
-    infos[index].classList.add("active");
-  });
+// Initialize tabs when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initTabs();
+  initCarousel();
 });
+
 const testimonials = [
   {
     text: `"Thanks to this NGO, my children now have access to quality education and a safe place to grow. You've changed our lives forever."`,
@@ -77,7 +77,7 @@ const testimonials = [
     author: "— Arjun Mehta, Volunteer",
   },
   {
-    text: `"I’ve been supporting this NGO for over 3 years now. Their transparency and on-ground results make every rupee count."`,
+    text: `"I've been supporting this NGO for over 3 years now. Their transparency and on-ground results make every rupee count."`,
     author: "— Kavitha Reddy, Donor",
   },
   {
@@ -85,11 +85,11 @@ const testimonials = [
     author: "— Ramesh Nair, Program Manager",
   },
   {
-    text: `"They gave me a scholarship when I had no other options. Today, I’m a nurse and giving back to my community."`,
+    text: `"They gave me a scholarship when I had no other options. Today, I'm a nurse and giving back to my community."`,
     author: "— Lakshmi P., Former Student",
   },
   {
-    text: `"This NGO's dedication to community upliftment is inspiring. I’m proud to contribute and be a small part of their journey."`,
+    text: `"This NGO's dedication to community upliftment is inspiring. I'm proud to contribute and be a small part of their journey."`,
     author: "— Chris Fernandes, Corporate Sponsor",
   },
   {
@@ -120,7 +120,6 @@ radios.forEach((radio) => {
   });
 });
 
-
 const floatingBtn =()=>{
   const floatingTop = document.getElementsByClassName("floating-top")[0];
 
@@ -133,3 +132,109 @@ const floatingBtn =()=>{
   });
 }
 floatingBtn();
+
+// Carousel Functionality
+function initCarousel() {
+  const carousel = document.querySelector('.feeds-container');
+  const items = document.querySelectorAll('.feed-head');
+  
+  if (!carousel || items.length === 0) return;
+  
+  // Calculate total width of original items
+  const originalItemsCount = items.length / 2; // Since we duplicated items
+  const itemWidth = items[0].offsetWidth + 100; // 100px is the gap
+  const totalWidth = originalItemsCount * itemWidth;
+  
+  // Reset animation when it completes
+  carousel.addEventListener('animationend', () => {
+    // Smoothly reset to start position
+    carousel.style.animation = 'none';
+    carousel.offsetHeight; // Trigger reflow
+    carousel.style.animation = 'carouselScroll 20s linear infinite';
+  });
+  
+  // Pause animation on hover
+  carousel.addEventListener('mouseenter', () => {
+    carousel.style.animationPlayState = 'paused';
+  });
+  
+  carousel.addEventListener('mouseleave', () => {
+    carousel.style.animationPlayState = 'running';
+  });
+}
+
+// ======= Our Reach Map Interactivity =======
+(function() {
+  const pins = document.querySelectorAll('.reach-pin');
+  const tooltip = document.getElementById('reachTooltip');
+  const mapContainer = document.querySelector('.reach-map-container');
+  let hideTimeout = null;
+
+  function showTooltip(evt, pin) {
+    clearTimeout(hideTimeout);
+    const city = pin.getAttribute('data-city');
+    const people = pin.getAttribute('data-people');
+    const programs = pin.getAttribute('data-programs');
+    tooltip.innerHTML = `
+      <strong>${city}</strong><br>
+      <span>People Helped: <b>${people}</b></span><br>
+      <span>Programs Run: <b>${programs}</b></span>
+    `;
+    tooltip.classList.add('active');
+    tooltip.style.display = 'block';
+
+    // Position tooltip
+    const svg = mapContainer.querySelector('svg');
+    const pt = svg.createSVGPoint();
+    let cx = 0, cy = 0;
+    // Find the main pin circle
+    const circle = pin.querySelector('.pin-circle');
+    if (circle) {
+      cx = parseFloat(circle.getAttribute('cx'));
+      cy = parseFloat(circle.getAttribute('cy'));
+    }
+    pt.x = cx;
+    pt.y = cy;
+    const screenCTM = svg.getScreenCTM();
+    if (screenCTM) {
+      const transformed = pt.matrixTransform(screenCTM);
+      // Offset for tooltip
+      let left = transformed.x - mapContainer.getBoundingClientRect().left;
+      let top = transformed.y - mapContainer.getBoundingClientRect().top;
+      // Responsive offset
+      left -= tooltip.offsetWidth / 2;
+      top -= tooltip.offsetHeight + 18;
+      // Clamp to container
+      left = Math.max(8, Math.min(left, mapContainer.offsetWidth - tooltip.offsetWidth - 8));
+      top = Math.max(8, top);
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    }
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove('active');
+    hideTimeout = setTimeout(() => {
+      tooltip.style.display = 'none';
+    }, 200);
+  }
+
+  pins.forEach(pin => {
+    // Desktop: hover
+    pin.addEventListener('mouseenter', evt => showTooltip(evt, pin));
+    pin.addEventListener('mouseleave', hideTooltip);
+    // Mobile: tap
+    pin.addEventListener('touchstart', evt => {
+      evt.stopPropagation();
+      showTooltip(evt, pin);
+    });
+  });
+  // Hide tooltip on tap/click elsewhere
+  document.addEventListener('touchstart', function(evt) {
+    if (!tooltip.contains(evt.target)) hideTooltip();
+  });
+  document.addEventListener('click', function(evt) {
+    if (!tooltip.contains(evt.target)) hideTooltip();
+  });
+})();
+
