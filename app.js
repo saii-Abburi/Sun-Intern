@@ -65,6 +65,7 @@ function initTabs() {
 document.addEventListener('DOMContentLoaded', function() {
   initTabs();
   initCarousel();
+  initFAQAccordion();
 });
 
 const testimonials = [
@@ -163,78 +164,59 @@ function initCarousel() {
   });
 }
 
-// ======= Our Reach Map Interactivity =======
-(function() {
-  const pins = document.querySelectorAll('.reach-pin');
-  const tooltip = document.getElementById('reachTooltip');
-  const mapContainer = document.querySelector('.reach-map-container');
-  let hideTimeout = null;
-
-  function showTooltip(evt, pin) {
-    clearTimeout(hideTimeout);
-    const city = pin.getAttribute('data-city');
-    const people = pin.getAttribute('data-people');
-    const programs = pin.getAttribute('data-programs');
-    tooltip.innerHTML = `
-      <strong>${city}</strong><br>
-      <span>People Helped: <b>${people}</b></span><br>
-      <span>Programs Run: <b>${programs}</b></span>
-    `;
-    tooltip.classList.add('active');
-    tooltip.style.display = 'block';
-
-    // Position tooltip
-    const svg = mapContainer.querySelector('svg');
-    const pt = svg.createSVGPoint();
-    let cx = 0, cy = 0;
-    // Find the main pin circle
-    const circle = pin.querySelector('.pin-circle');
-    if (circle) {
-      cx = parseFloat(circle.getAttribute('cx'));
-      cy = parseFloat(circle.getAttribute('cy'));
-    }
-    pt.x = cx;
-    pt.y = cy;
-    const screenCTM = svg.getScreenCTM();
-    if (screenCTM) {
-      const transformed = pt.matrixTransform(screenCTM);
-      // Offset for tooltip
-      let left = transformed.x - mapContainer.getBoundingClientRect().left;
-      let top = transformed.y - mapContainer.getBoundingClientRect().top;
-      // Responsive offset
-      left -= tooltip.offsetWidth / 2;
-      top -= tooltip.offsetHeight + 18;
-      // Clamp to container
-      left = Math.max(8, Math.min(left, mapContainer.offsetWidth - tooltip.offsetWidth - 8));
-      top = Math.max(8, top);
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
-    }
-  }
-
-  function hideTooltip() {
-    tooltip.classList.remove('active');
-    hideTimeout = setTimeout(() => {
-      tooltip.style.display = 'none';
-    }, 200);
-  }
-
-  pins.forEach(pin => {
-    // Desktop: hover
-    pin.addEventListener('mouseenter', evt => showTooltip(evt, pin));
-    pin.addEventListener('mouseleave', hideTooltip);
-    // Mobile: tap
-    pin.addEventListener('touchstart', evt => {
-      evt.stopPropagation();
-      showTooltip(evt, pin);
+// ======= FAQ Accordion Functionality =======
+function initFAQAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    if (!question || !answer) return;
+    
+    question.addEventListener('click', () => {
+      const isExpanded = question.getAttribute('aria-expanded') === 'true';
+      
+      // Close all other FAQ items
+      faqItems.forEach(otherItem => {
+        const otherQuestion = otherItem.querySelector('.faq-question');
+        const otherAnswer = otherItem.querySelector('.faq-answer');
+        
+        if (otherItem !== item) {
+          otherQuestion.setAttribute('aria-expanded', 'false');
+          otherAnswer.style.maxHeight = '0px';
+          otherAnswer.style.padding = '0px';
+          otherAnswer.style.opacity = '0';
+          otherItem.classList.remove('active');
+        }
+      });
+      
+      // Toggle current item
+      if (isExpanded) {
+        // Close current item
+        question.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = '0px';
+        answer.style.padding = '0px';
+        answer.style.opacity = '0';
+        item.classList.remove('active');
+      } else {
+        // Open current item
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = '80px';
+        answer.style.padding = '18px';
+        answer.style.opacity = '1';
+        item.classList.add('active');
+      }
+    });
+    
+    // Keyboard navigation support
+    question.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        question.click();
+      }
     });
   });
-  // Hide tooltip on tap/click elsewhere
-  document.addEventListener('touchstart', function(evt) {
-    if (!tooltip.contains(evt.target)) hideTooltip();
-  });
-  document.addEventListener('click', function(evt) {
-    if (!tooltip.contains(evt.target)) hideTooltip();
-  });
-})();
+}
+
 

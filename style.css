@@ -739,107 +739,8 @@ ew {
   }
 }
 
-@media (max-width: 768px) {
-  .about-us {
-    padding: 60px 4%;
-  }
 
-  .about-description {
-    font-size: 14px;
-  }
 
-  .about-tabs {
-    gap: 12px;
-  }
-
-  .tab-btn {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
-
-  .impact-stats {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .stat-card {
-    padding: 20px;
-  }
-
-  .volunteer-card {
-    padding: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-us {
-    padding: 40px 4%;
-  }
-
-  .about-title {
-    font-size: 28px;
-  }
-
-  .about-subtitle {
-    font-size: 16px;
-  }
-
-  .tab-btn {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .tab-btn i {
-    font-size: 14px;
-  }
-
-  .content-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .content-icon i {
-    font-size: 20px;
-  }
-
-  .tab-content h3 {
-    font-size: 20px;
-  }
-
-  .tab-content p {
-    font-size: 14px;
-  }
-
-  .stat-card {
-    padding: 16px;
-  }
-
-  .stat-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .stat-icon i {
-    font-size: 16px;
-  }
-
-  .stat-info h2 {
-    font-size: 24px;
-  }
-
-  .volunteer-card {
-    padding: 20px;
-  }
-
-  .volunteer-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .volunteer-icon i {
-    font-size: 24px;
-  }
-}
 
 /* *************** Teams************* */
 .teams {
@@ -947,78 +848,10 @@ ew {
   font-style: italic;
 }
 
-/* Responsive Design for Teams Section */
-@media (max-width: 768px) {
-  .teams {
-    padding: 2% 4%;
-  }
 
-  .teams-title {
-    font-size: 32px;
-  }
 
-  .teams-description {
-    font-size: 14px;
-  }
 
-  .teams-grid {
-    gap: 32px;
-  }
 
-  .team-card {
-    max-width: 350px;
-  }
-
-  .team-image {
-    height: 250px;
-  }
-
-  .team-name {
-    font-size: 20px;
-  }
-
-  .team-quote {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .teams {
-    padding: 2% 4%;
-  }
-
-  .teams-title {
-    font-size: 28px;
-  }
-
-  .teams-subtitle {
-    font-size: 16px;
-  }
-
-  .team-card {
-    max-width: 300px;
-  }
-
-  .team-image {
-    height: 200px;
-  }
-
-  .team-name {
-    font-size: 18px;
-  }
-
-  .team-role {
-    font-size: 12px;
-  }
-
-  .team-quote {
-    font-size: 12px;
-  }
-
-  .teams-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 
 @media (min-width: 600px) and (max-width: 991px) {
   .teams-grid {
@@ -1082,18 +915,7 @@ ew {
   position: relative;
 }
 
-.voices-title span::before,
-.teams-title span::before,
-.about-title span::before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #ff5700 0%, #f97316 100%);
-  border-radius: 2px;
-}
+
 
 .voices-description {
   font-size: 18px;
@@ -1227,42 +1049,6 @@ ew {
 }
 
 /* Responsive Design for Voices Section */
-@media (max-width: 768px) {
-  .voices-vision {
-    padding: 60px 4%;
-  }
-
-  .voices-title {
-    font-size: 36px;
-  }
-
-  .voices-description {
-    font-size: 16px;
-  }
-
-  .voices-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .voice-card {
-    padding: 24px;
-  }
-
-  .voice-image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-  }
-
-  .voice-name {
-    font-size: 20px;
-  }
-
-  .voice-quote {
-    font-size: 14px;
-  }
-}
 
 @media (max-width: 480px) {
   .voices-vision {
@@ -2088,49 +1874,14 @@ ew {
 }
 
 /* Responsive Design for Voices Section */
-@media (max-width: 768px) {
-  .voices-vision {
-    padding: 60px 4%;
-  }
 
-  .voices-title {
-    font-size: 36px;
-  }
-
-  .voices-description {
-    font-size: 16px;
-  }
-
-  .voices-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .voice-card {
-    padding: 24px;
-  }
-
-  .voice-image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-  }
-
-  .voice-name {
-    font-size: 20px;
-  }
-
-  .voice-quote {
-    font-size: 14px;
-  }
-}
 
 @media (max-width: 480px) {
   .voices-vision {
     padding: 40px 4%;
   }
 
-  .voices-title {
+  .voices-title , .teams-title {
     font-size: 28px;
   }
 
@@ -2359,70 +2110,7 @@ footer div ul li {
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {
-  .socials {
-    display: none;
-  }
-  .mail {
-    width: 100vw;
-    font-size: xx-small;
-  }
-  .mail-right button,
-  .mail-left h2,
-  .mail-right p {
-    font-size: xx-small;
-  }
-  .slider img {
-    height: 300px;
-    width: 260px;
-    object-position: center;
-    object-fit: fill;
-  }
-  .hero-title {
-    display: none;
-  }
-  .events-left,
-  .events-right {
-    width: 100%;
-  }
-  .about-us h2,
-  .testi-left h2,
-  .hero-title h1,
-  .abt-right h2,
-  .center,
-  .e .e-date h2,
-  .f-card h1 {
-    font-size: 32px;
-  }
-  .f-card {
-    top: -30%;
-  }
-  .f-copyright {
-    display: block;
-  }
-  .f-copyright h2 {
-    font-size: 18px;
-    margin-bottom: 24px;
-  }
-  .about-tags {
-    flex-wrap: wrap;
-  }
-  .testi-right ul li .card-img img {
-    height: 200px;
-  }
-  .teams-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .feed-top p {
-    font-size: 12px;
-  }
-  .feeds-container {
-    scrollbar-width: none;
-  }
-  .testimonial-message h1 {
-    font-size: 30px;
-  }
-}
+
 
 @media (max-width: 991px) {
   .header-right ul {
@@ -2756,7 +2444,8 @@ footer div ul li {
 .testimonials-stats {
   display: flex;
   gap: 24px;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 24px;
 }
 
@@ -2808,7 +2497,7 @@ footer div ul li {
   margin-top: 16px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
 }
 
@@ -2937,7 +2626,7 @@ footer div ul li {
     font-size: 14px;
   }
   .stat-item {
-    min-width: 80px;
+    min-width: 200px;
     padding: 8px 4px;
     border-radius: 8px;
   }
@@ -3284,7 +2973,7 @@ footer div ul li {
   background: #fff;
   color: #475569;
   font-size: 16px;
-  padding: 0 24px;
+  padding: 0px 24px;
   transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.2s;
 }
 .faq-item.open .faq-answer {
@@ -3323,4 +3012,308 @@ footer div ul li {
     padding-left: 6px;
     padding-right: 6px;
   }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .socials {
+    display: none;
+  }
+  .mail {
+    width: 100vw;
+    font-size: xx-small;
+  }
+  .mail-right button,
+  .mail-left h2,
+  .mail-right p {
+    font-size: xx-small;
+  }
+  .slider img {
+    height: 300px;
+    width: 260px;
+    object-position: center;
+    object-fit: fill;
+  }
+  .hero-title {
+    display: none;
+  }
+  .events-left,
+  .events-right {
+    width: 100%;
+  }
+  .about-us h2,
+  .testi-left h2,
+  .hero-title h1,
+  .abt-right h2,
+  .center,
+  .e .e-date h2,
+  .f-card h1 {
+    font-size: 32px;
+  }
+  .f-card {
+    top: -30%;
+  }
+  .f-copyright {
+    display: block;
+  }
+  .f-copyright h2 {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .about-tags {
+    flex-wrap: wrap;
+  }
+  .testi-right ul li .card-img img {
+    height: 200px;
+  }
+  .teams-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .feed-top p {
+    font-size: 12px;
+  }
+  .feeds-container {
+    scrollbar-width: none;
+  }
+  .testimonial-message h1 {
+    font-size: 30px;
+  }
+  .teams {
+    padding: 2% 4%;
+  }
+
+  .teams-title {
+    font-size: 28px;
+  }
+
+  .teams-subtitle {
+    font-size: 16px;
+  }
+
+  .team-card {
+    max-width: 300px;
+  }
+
+  .team-image {
+    height: 200px;
+  }
+
+  .team-name {
+    font-size: 18px;
+  }
+
+  .team-role {
+    font-size: 12px;
+  }
+
+  .team-quote {
+    font-size: 12px;
+  }
+
+  .teams-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .about-us {
+    padding: 40px 4%;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .tab-btn i {
+    font-size: 14px;
+  }
+
+  .content-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .content-icon i {
+    font-size: 20px;
+  }
+
+  .tab-content h3 {
+    font-size: 20px;
+  }
+
+  .tab-content p {
+    font-size: 14px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stat-icon i {
+    font-size: 16px;
+  }
+
+  .stat-info h2 {
+    font-size: 24px;
+  }
+
+  .volunteer-card {
+    padding: 20px;
+  }
+
+  .volunteer-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .volunteer-icon i {
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .voices-vision {
+    padding: 60px 4%;
+  }
+
+  .voices-title , .teams-title , .about-title , .testimonial-message h1
+   {
+    font-size: 36px;
+  }
+
+  .voices-description {
+    font-size: 16px;
+  }
+
+  .voices-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .voice-card {
+    padding: 24px;
+  }
+
+  .voice-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .voice-name {
+    font-size: 20px;
+  }
+
+  .voice-quote {
+    font-size: 14px;
+  }
+  .about-us {
+    padding: 60px 4%;
+  }
+
+  .about-description {
+    font-size: 14px;
+  }
+
+  .about-tabs {
+    gap: 12px;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .impact-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .volunteer-card {
+    padding: 24px;
+  }
+  .teams {
+    padding: 2% 4%;
+  }
+
+  .teams-title {
+    font-size: 32px;
+  }
+
+  .teams-description {
+    font-size: 14px;
+  }
+
+  .teams-grid {
+    gap: 32px;
+  }
+
+  .team-card {
+    max-width: 350px;
+  }
+
+  .team-image {
+    height: 250px;
+  }
+
+  .team-name {
+    font-size: 20px;
+  }
+
+  .team-quote {
+    font-size: 13px;
+  }
+  .voices-vision {
+    padding: 60px 4%;
+  }
+
+  .voices-title {
+    font-size: 36px;
+  }
+
+  .voices-description {
+    font-size: 16px;
+  }
+
+  .voices-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .voice-card {
+    padding: 24px;
+  }
+
+  .voice-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .voice-name {
+    font-size: 20px;
+  }
+
+  .voice-quote {
+    font-size: 14px;
+  }
+  
 }
