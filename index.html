@@ -28,9 +28,9 @@
           <li><a href="#about">Vision</a></li>
           <li><a href="#about">Mission</a></li>
           <li><a href="#upcomingevents">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#">Work With Us</a></li>
           <li><a href="#voices-vision">Faces of Impact</a></li>
-          <button>Login/Sign Up</button>
         </ul>
       </nav>
       <button class="menu-icon" aria-label="Open navigation menu" aria-controls="menuList" aria-expanded="false">
@@ -270,112 +270,372 @@
         </p>
       </div>
 
-      <div class="teams-grid">
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="Tech Saala Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Tech Saala</h3>
-            <p class="team-role">Technical Education & Innovation</p>
-            <blockquote class="team-quote">
-              "Explains about technical and science experiments to the students and creating content"
-            </blockquote>
+      <div class="teams-carousel-container">
+        <button class="carousel-btn carousel-prev" aria-label="Previous teams">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <div class="teams-carousel">
+          <div class="teams-grid">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="Tech Saala Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">Tech Saala</h3>
+                <p class="team-role">Technical Education & Innovation</p>
+                <blockquote class="team-quote">
+                  "Explains about technical and science experiments to the students and creating content"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="The Imaginators Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">The Imaginators</h3>
+                <p class="team-role">Arts & Cultural Activities</p>
+                <blockquote class="team-quote">
+                  "Art and extra cultural activities that inspire creativity and cultural appreciation"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="Guiding Lights Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">Guiding Lights</h3>
+                <p class="team-role">Career Guidance & Mentorship</p>
+                <blockquote class="team-quote">
+                  "Providing career guidance and mentorship to help students navigate their future paths"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="Visual Vibe Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">Visual Vibe</h3>
+                <p class="team-role">Media & Communications</p>
+                <blockquote class="team-quote">
+                  "Taking photos of every event, handling social media and poster making"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="Feeding Hands Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">Feeding Hands</h3>
+                <p class="team-role">Food Distribution & Care</p>
+                <blockquote class="team-quote">
+                  "Food distribution at orphanages and old age homes with compassion and care"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="The Life Saviours Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">The Life Saviours</h3>
+                <p class="team-role">Blood Donation & Healthcare</p>
+                <blockquote class="team-quote">
+                  "Blood donations and circulating about requirements of blood to save lives"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="Event Management Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">Event Management</h3>
+                <p class="team-role">Program Coordination</p>
+                <blockquote class="team-quote">
+                  "Organising SUN programs and planning events that bring communities together"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="./slider1.jpg" alt="Elite Queens Team">
+              </div>
+              <div class="team-content">
+                <h3 class="team-name">Elite Queens</h3>
+                <p class="team-role">Women Empowerment</p>
+                <blockquote class="team-quote">
+                  "Giving awareness to the girls among society and empowering women leaders"
+                </blockquote>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="The Imaginators Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">The Imaginators</h3>
-            <p class="team-role">Arts & Cultural Activities</p>
-            <blockquote class="team-quote">
-              "Art and extra cultural activities that inspire creativity and cultural appreciation"
-            </blockquote>
+        <button class="carousel-btn carousel-next" aria-label="Next teams">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+      <div class="gallery-header">
+        <h4 class="gallery-subtitle">Our Impact</h4>
+        <h2 class="gallery-title">
+          Moments That <span>Matter</span>
+        </h2>
+        <p class="gallery-description">
+          Explore the visual stories of our journey—from classroom transformations to community celebrations. 
+          Each image captures the real impact of your support and the hope we bring to communities.
+        </p>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-images"></i>
+          All Photos
+        </button>
+        <button class="filter-btn" data-filter="education">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Education
+        </button>
+        <button class="filter-btn" data-filter="healthcare">
+          <i class="fa-solid fa-heart-pulse"></i>
+          Healthcare
+        </button>
+        <button class="filter-btn" data-filter="community">
+          <i class="fa-solid fa-users"></i>
+          Community
+        </button>
+        <button class="filter-btn" data-filter="events">
+          <i class="fa-solid fa-calendar-days"></i>
+          Events
+        </button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="education">
+          <div class="gallery-image">
+            <img src="./slider1.jpg" alt="Students in classroom" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Classroom Transformation</h3>
+                <p>Students learning in our newly renovated classroom</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider1.jpg', 'Classroom Transformation')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="Guiding Lights Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Guiding Lights</h3>
-            <p class="team-role">Career Guidance & Mentorship</p>
-            <blockquote class="team-quote">
-              "Providing career guidance and mentorship to help students navigate their future paths"
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="Visual Vibe Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Visual Vibe</h3>
-            <p class="team-role">Media & Communications</p>
-            <blockquote class="team-quote">
-              "Taking photos of every event, handling social media and poster making"
-            </blockquote>
+        <div class="gallery-item" data-category="healthcare">
+          <div class="gallery-image">
+            <img src="./slider2.jpg" alt="Health camp" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Health Camp Success</h3>
+                <p>Providing healthcare access to rural communities</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider2.jpg', 'Health Camp Success')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="Feeding Hands Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Feeding Hands</h3>
-            <p class="team-role">Food Distribution & Care</p>
-            <blockquote class="team-quote">
-              "Food distribution at orphanages and old age homes with compassion and care"
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="The Life Saviours Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">The Life Saviours</h3>
-            <p class="team-role">Blood Donation & Healthcare</p>
-            <blockquote class="team-quote">
-              "Blood donations and circulating about requirements of blood to save lives"
-            </blockquote>
+        <div class="gallery-item" data-category="community">
+          <div class="gallery-image">
+            <img src="./slider3.jpg" alt="Community gathering" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Community Unity</h3>
+                <p>Bringing people together for positive change</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider3.jpg', 'Community Unity')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="Event Management Team">
-          </div>
-          <div class="team-content">
-            <h3 class="team-name">Event Management</h3>
-            <p class="team-role">Program Coordination</p>
-            <blockquote class="team-quote">
-              "Organising SUN programs and planning events that bring communities together"
-            </blockquote>
+        <div class="gallery-item" data-category="events">
+          <div class="gallery-image">
+            <img src="./slider4.jpg" alt="Event celebration" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Celebration Day</h3>
+                <p>Joyful moments from our community events</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider4.jpg', 'Celebration Day')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="team-image">
-            <img src="./slider1.jpg" alt="Elite Queens Team">
+        <div class="gallery-item" data-category="education">
+          <div class="gallery-image">
+            <img src="./slider5.jpg" alt="Student workshop" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Learning Workshop</h3>
+                <p>Students engaged in hands-on learning activities</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider5.jpg', 'Learning Workshop')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="team-content">
-            <h3 class="team-name">Elite Queens</h3>
-            <p class="team-role">Women Empowerment</p>
-            <blockquote class="team-quote">
-              "Giving awareness to the girls among society and empowering women leaders"
-            </blockquote>
+        </div>
+
+        <div class="gallery-item" data-category="healthcare">
+          <div class="gallery-image">
+            <img src="./slider1.jpg" alt="Blood donation" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Blood Donation Drive</h3>
+                <p>Saving lives through community blood donation</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider1.jpg', 'Blood Donation Drive')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <div class="gallery-image">
+            <img src="./slider2.jpg" alt="Volunteer work" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Volunteer Spirit</h3>
+                <p>Dedicated volunteers making a difference</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider2.jpg', 'Volunteer Spirit')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <div class="gallery-image">
+            <img src="./slider3.jpg" alt="Cultural program" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Cultural Celebration</h3>
+                <p>Embracing diversity through cultural programs</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider3.jpg', 'Cultural Celebration')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="education">
+          <div class="gallery-image">
+            <img src="./slider4.jpg" alt="Library setup" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Library Initiative</h3>
+                <p>Building knowledge through reading and learning</p>
+                <div class="overlay-actions">
+                  <button class="view-btn" onclick="openLightbox('./slider4.jpg', 'Library Initiative')">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="gallery-cta">
+        <button class="load-more-btn">
+          <i class="fa-solid fa-plus"></i>
+          Load More Photos
+        </button>
+        <p>Share your moments with us! Send photos of your volunteer experiences.</p>
+      </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">
+          <i class="fa-solid fa-times"></i>
+        </button>
+        <div class="lightbox-image">
+          <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-caption">
+          <h3 id="lightbox-title"></h3>
+        </div>
+        <button class="lightbox-prev" onclick="changeImage(-1)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" onclick="changeImage(1)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
 
     <!-- Voices Behind the Vision Section -->
     <section class="voices-vision" id="voices-vision">

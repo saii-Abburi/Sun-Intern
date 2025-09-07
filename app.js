@@ -65,6 +65,7 @@ function initTabs() {
 document.addEventListener('DOMContentLoaded', function() {
   initTabs();
   initCarousel();
+  initTeamsCarousel();
   initFAQAccordion();
 });
 
@@ -164,6 +165,76 @@ function initCarousel() {
   });
 }
 
+// ======= Teams Carousel Functionality =======
+function initTeamsCarousel() {
+  const teamsCarousel = document.querySelector('.teams-carousel');
+  const teamsGrid = document.querySelector('.teams-grid');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const teamCards = document.querySelectorAll('.team-card');
+  
+  if (!teamsCarousel || !teamsGrid || !prevBtn || !nextBtn) return;
+  
+  let currentIndex = 0;
+  const cardsPerView = getCardsPerView();
+  const maxIndex = Math.max(0, teamCards.length - cardsPerView);
+  
+  function getCardsPerView() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 991) return 2;
+    return 3;
+  }
+  
+  function updateCarousel() {
+    const cardWidth = teamCards[0].offsetWidth + 48; // 48px is the gap
+    const translateX = -currentIndex * cardWidth;
+    teamsGrid.style.transform = `translateX(${translateX}px)`;
+    
+    // Update button states
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+  }
+  
+  function goToNext() {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  }
+  
+  function goToPrev() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  }
+  
+  // Event listeners
+  nextBtn.addEventListener('click', goToNext);
+  prevBtn.addEventListener('click', goToPrev);
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      goToNext();
+    } else if (e.key === 'ArrowLeft') {
+      goToPrev();
+    }
+  });
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const newCardsPerView = getCardsPerView();
+    if (newCardsPerView !== cardsPerView) {
+      currentIndex = 0;
+      updateCarousel();
+    }
+  });
+  
+  // Initialize carousel
+  updateCarousel();
+}
+
 // ======= FAQ Accordion Functionality =======
 function initFAQAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -218,5 +289,148 @@ function initFAQAccordion() {
     });
   });
 }
+
+// Gallery Functionality
+function initGallery() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const loadMoreBtn = document.querySelector('.load-more-btn');
+  
+  // Filter functionality
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Filter gallery items
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+          item.style.animation = 'fadeIn 0.6s ease forwards';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+  
+  // Load more functionality
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      // Simulate loading more photos
+      loadMoreBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...';
+      loadMoreBtn.disabled = true;
+      
+      setTimeout(() => {
+        loadMoreBtn.innerHTML = '<i class="fa-solid fa-check"></i> Photos Loaded';
+        loadMoreBtn.style.background = '#28a745';
+        
+        setTimeout(() => {
+          loadMoreBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Load More Photos';
+          loadMoreBtn.style.background = 'linear-gradient(135deg, #ff5700 0%, #ff6b1a 100%)';
+          loadMoreBtn.disabled = false;
+        }, 2000);
+      }, 1500);
+    });
+  }
+}
+
+// Lightbox functionality
+let currentImageIndex = 0;
+let galleryImages = [];
+
+function openLightbox(imageSrc, imageTitle) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  
+  // Get all gallery images for navigation
+  galleryImages = Array.from(document.querySelectorAll('.gallery-item img')).map(img => ({
+    src: img.src,
+    title: img.alt
+  }));
+  
+  // Find current image index
+  currentImageIndex = galleryImages.findIndex(img => img.src.includes(imageSrc.split('/').pop()));
+  
+  // Update lightbox content
+  lightboxImg.src = imageSrc;
+  lightboxTitle.textContent = imageTitle;
+  
+  // Show lightbox
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function changeImage(direction) {
+  if (galleryImages.length === 0) return;
+  
+  currentImageIndex += direction;
+  
+  if (currentImageIndex >= galleryImages.length) {
+    currentImageIndex = 0;
+  } else if (currentImageIndex < 0) {
+    currentImageIndex = galleryImages.length - 1;
+  }
+  
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  
+  lightboxImg.src = galleryImages[currentImageIndex].src;
+  lightboxTitle.textContent = galleryImages[currentImageIndex].title;
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+// Close lightbox when clicking outside
+document.addEventListener('click', (e) => {
+  const lightbox = document.getElementById('lightbox');
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// Add fadeIn animation to CSS
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .gallery-item {
+    animation: fadeIn 0.6s ease forwards;
+  }
+`;
+document.head.appendChild(style);
+
+// Initialize gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initTabs();
+  initCarousel();
+  initTeamsCarousel();
+  initFAQAccordion();
+  initGallery(); // Add this line
+});
 
 

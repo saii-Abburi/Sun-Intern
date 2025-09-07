@@ -38,8 +38,7 @@ A modern, premium, and fully responsive website for the Students Union for Natio
 
 ## Live Demo
 
-> _Add your deployment link here (e.g., Netlify, Vercel, GitHub Pages)_
-
+https://saii-abburi.github.io/Sun-Intern/
 ---
 
 ## Project Structure
