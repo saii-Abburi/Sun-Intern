@@ -395,8 +395,6 @@ document.addEventListener('keydown', (e) => {
     closeLightbox();
   }
 });
-
-// Close lightbox when clicking outside
 document.addEventListener('click', (e) => {
   const lightbox = document.getElementById('lightbox');
   if (e.target === lightbox) {
